@@ -1,10 +1,10 @@
 <template>
-
   <div oncontextmenu="return false;" class="homepage-hero-module">
     <div class="video-container">
 		<div class="mytop" >
 			<p class="myhed">
-				<img :src="meinfo.headimg"/>
+				<img v-if="meinfo.headimg" :src="meinfo.headimg"/>
+				<img v-else src="../assets/jz.gif"/>
 			</p>
 			<ul>
 				<div class="hr"></div>
@@ -33,22 +33,26 @@
 
 
 <script>
-  import axios from 'axios'
   export default {
     name: 'login',
     data() {
       return {
         fixStyle: '',
 		meinfo:[]
-		
       }
     },
     methods: {
 	  gethed(){
-		axios.get('https://www.x6d.com/plus/comment_ajax.php?action=getQQInfo&qq=1044177062')
+		this.$axios.get('https://www.x6d.com/plus/comment_ajax.php?action=getQQInfo&qq=1044177062')
 		.then(res=>{
 			this.meinfo=res.data.data
-			console.log(res)
+			if(!this.meinfo){
+				console.log('未获取到再次执行')
+				this.gethed()
+			}
+			console.log(this.meinfo)
+		}).catch(res=>{
+			this.gethed()
 		})
 	  },
      tzvideo(){
