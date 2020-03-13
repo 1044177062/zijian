@@ -17,9 +17,9 @@
 			<ul class="myul">
 				<li><a class="choice" href="tencent://message/?uin=1044177062&Site=梓贱个人主页&Menu=yes">作者QQ</a></li>
 				<li><a class="choice" href="https://space.bilibili.com/8456806?from=search&seid=6304833652226798730">B站空间</a></li>
-				<li><a class="choice" href="javascript:;" @click="tzvideo()">看看视频</a></li>
-				<li><a class="choice" href="http://www.zijian666.top/mikutap/">MikuTap</a></li>
+				<li><a class="choice" href="http://video.zijian666.top/">梓贱视频</a></li>
 				<li><a class="choice" href="http://pan.zijian666.top/">梓贱云盘</a></li>
+				<li><a class="choice" href="http://www.zijian666.top/mikutap/">MikuTap</a></li>
 				<li><a class="choice" href="#">等待添加</a></li>
 			</ul>
 		</div>
@@ -54,10 +54,7 @@
 		}).catch(res=>{
 			this.gethed()
 		})
-	  },
-     tzvideo(){
-		 this.$router.push('video')
-	 }
+	  }
     },
 	created(){
 		this.gethed()
