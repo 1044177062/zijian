@@ -4,7 +4,7 @@
 		<div class="mytop" >
 			<p class="myhed">
 				<img v-if="meinfo.headimg" :src="meinfo.headimg"/>
-				<img v-else src="../assets/jz.gif"/>
+				<img v-else  src="../assets/jz.gif"/>
 			</p>
 			<ul>
 				<div class="hr"></div>
@@ -95,7 +95,6 @@
 </script>
 
 <style scoped>
-
 	
 	a{
 		color: white;
